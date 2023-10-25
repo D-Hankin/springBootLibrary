@@ -15,15 +15,22 @@ public class BootBiblioteketController {
 
     static {
         bookList.add(new BootBiblioteket("Book1", "Jim", 111, 1));
-        bookList.add(new BootBiblioteket("Book2", "John", 222, 1));
-        bookList.add(new BootBiblioteket("Book3", "Jack", 333, 1));
-        bookList.add(new BootBiblioteket("Book4", "Joe", 444, 1));
+        bookList.add(new BootBiblioteket("Book2", "John", 222, 2));
+        bookList.add(new BootBiblioteket("Book3", "Jack", 333, 3));
+        bookList.add(new BootBiblioteket("Book4", "Joe", 444, 4));
     }
     
     @GetMapping("/")
-    public String getBootBibilioteket(Model model) {
+    String getBootBibilioteket(Model model) {
         model.addAttribute("bookList", bookList);
         System.out.println("HelloBook");
         return "index";
+    }
+
+    @GetMapping("/details")
+    String getDetails(Model model) {
+        System.out.println("Details");
+
+        return "/details";
     }
 }
