@@ -1,0 +1,14 @@
+body {
+    background-color: black;
+    color: gold;
+    text-align: center;
+    margin: auto;
+}
+table {
+    margin-left: 40%;
+    margin-bottom: 2%;
+}
+ul {
+    margin-left: 40%;
+    text-align: left;
+}

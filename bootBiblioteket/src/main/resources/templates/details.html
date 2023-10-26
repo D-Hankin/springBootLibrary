@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Book Details</title>
+    <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
     <h1>Library</h1>
@@ -11,16 +12,17 @@
     <table>
         <tr>
             <th>Name</th>
-            <td></td>
+            <td><span th:text="${book.name}"></span></td>
         </tr>
         <tr>
             <th>Author</th>
-            <td></td>
+            <td><span th:text="${book.author}"></span></td>
         </tr>
         <tr>
             <th>Number of Pages</th>
-            <td></td>
+            <td><span th:text="${book.noOfPages}"></span></td>
         </tr>
     </table>
+    <div><a href="/">Home</a></div>
 </body>
 </html>

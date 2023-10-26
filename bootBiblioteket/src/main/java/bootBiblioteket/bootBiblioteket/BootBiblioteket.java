@@ -6,12 +6,14 @@ public class BootBiblioteket {
     private String author;
     private int noOfPages;
     private int id;
+    private boolean rented;
 
-    public BootBiblioteket(String name, String author, int noOfPages, int id) {
+    public BootBiblioteket(String name, String author, int noOfPages, int id, boolean rented) {
         this.name = name;
         this.author = author;
         this.noOfPages = noOfPages;
         this.id = id;
+        this.rented = rented;
     }
 
     public String getName() {
@@ -44,6 +46,14 @@ public class BootBiblioteket {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public boolean isRented() {
+        return rented;
+    }
+
+    public void setRented(boolean rented) {
+        this.rented = rented;
     }
 
     
