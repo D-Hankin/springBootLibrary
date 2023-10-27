@@ -52,8 +52,8 @@ public class BootBiblioteket {
         return rented;
     }
 
-    public void setRented(boolean rented) {
-        this.rented = rented;
+    public void setRented() {
+        this.rented = !this.rented;
     }
 
     
