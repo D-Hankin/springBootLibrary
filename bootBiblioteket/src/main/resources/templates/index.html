@@ -8,10 +8,20 @@
 </head>
 <body>
     <h1>Library</h1>
+    <h2>Add new book:</h2>
+    <form method="post" th:action="@{/new-book}" th:object="${newBook}">
+        Name: 
+        <input type="text" th:field="*{name}">
+        Author:
+        <input type="text" th:field="*{author}">
+        No. of Pages: 
+        <input type="text" th:field="*{noOfPages}">
+        <input type="submit">
+    </form>
     <h2>Currently available:</h2>
     <ul>
         <li th:id="${item.id}" th:each="item : ${bookList}">
-            <a th:href="@{/details/{itemId}(itemId=${item.id})}"><span th:text="${item.name}"></span></a>
+            <a th:href="@{/details/rent/{itemId}(itemId=${item.id})}"><span class="" th:classappend="${item.rented ? 'isRented' : '' }" th:text="${item.name}"></span></a>
         </li>
     </ul>
 </body>

@@ -11,4 +11,8 @@ table {
 ul {
     margin-left: 40%;
     text-align: left;
+    font-size: 200%;
+}
+.isRented {
+    text-decoration: line-through;
 }
