@@ -21,7 +21,7 @@
     <h2>Currently available:</h2>
     <ul>
         <li th:id="${item.id}" th:each="item : ${bookList}">
-            <a th:href="@{/details/rent/{itemId}(itemId=${item.id})}"><span class="" th:classappend="${item.rented ? 'isRented' : '' }" th:text="${item.name}"></span></a>
+            <a th:href="@{/details/{itemId}(itemId=${item.id})}"><span class="" th:classappend="${item.rented ? 'isRented' : '' }" th:text="${item.name}"></span></a>
         </li>
     </ul>
 </body>
