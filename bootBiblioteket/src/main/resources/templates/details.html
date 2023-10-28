@@ -22,7 +22,6 @@
             <th>Number of Pages</th>
             <td><span th:text="${book.noOfPages}"></span></td>
         </tr>
-        <tr><span th:text="${book.rented}"></span></tr>
     </table>
     <a th:href="@{/details/rent/{bookId}(bookId = ${book.id})}">
         <button><span th:text="${book.rented ? 'Return book' : 'Loan Book'}"></span></button>
