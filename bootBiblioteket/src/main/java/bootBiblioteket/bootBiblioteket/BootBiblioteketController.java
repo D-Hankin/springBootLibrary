@@ -18,16 +18,16 @@ public class BootBiblioteketController {
     
     @GetMapping("/")
     String getBootBibilioteket(Model model) {
+
         model.addAttribute("bookList", bookList);
         model.addAttribute("newBook", new BootBiblioteket(null, null, 0, 0, false));
         System.out.println("HelloBook");
+        
         return "index";
     }
 
     @GetMapping("/details/{itemId}")
     String getDetails(@PathVariable int itemId, Model model) {
-
-        System.out.println("Details" + itemId);
 
         for(BootBiblioteket book : bookList) {
             if (book.getId() == itemId){
@@ -42,13 +42,12 @@ public class BootBiblioteketController {
     @GetMapping("/details/rent/{itemId}")
     String getRent(@PathVariable int itemId, Model model) {
 
-        System.out.println("Details" + itemId);
-
         for(BootBiblioteket book : bookList) {
             if (book.getId() == itemId){
+
+                book.setRented();
                 model.addAttribute("book", new BootBiblioteket(book.getName(), book.getAuthor(), book.getNoOfPages(), book.getId(), book.isRented()));
                 System.out.println(book.getName());
-                book.setRented();
 
                 return "details";
             }
@@ -59,8 +58,9 @@ public class BootBiblioteketController {
 
     @PostMapping("/new-book")
     String newBook(@RequestParam("name") String name, @RequestParam("author") String author, @RequestParam("noOfPages") int noOfPages) {
-        System.out.println((name + " " + author + " " + noOfPages));
+
         bookList.add(new BootBiblioteket(name, author, noOfPages, bookList.size() + 1, false));
+
         return "redirect:/";
     }
 }
